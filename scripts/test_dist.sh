@@ -2,11 +2,11 @@
 PYTHON=${PYTHON:-"python"}
 GPUS=4
 
-# RESUME=$1
-ARCH=${1-mobilenetv3_large}
+RESUME=$1
+ARCH=${2-mobilenetv3_large}
 
-DATASET=${2-pitts}
-SCALE=${3-30k}
+DATASET=${3-pitts}
+SCALE=${4-30k}
 
 if [ $# -lt 1 ]
   then
@@ -27,8 +27,8 @@ done
 $PYTHON -m torch.distributed.launch --nproc_per_node=$GPUS --master_port=$PORT --use_env \
 test.py --launcher pytorch \
     -d ${DATASET} --scale ${SCALE} -a ${ARCH} \
-    --test-batch-size 4 -j 2 \
+    --test-batch-size 8 -j 2 \
     --width 640 --height 480 --features 4096 \
     --vlad --reduction \
-    --resume logs/netVLAD/pitts30k-mobilenetv3_large/model_best.pth.tar
+    --resume ${RESUME}
     # --sync-gather
