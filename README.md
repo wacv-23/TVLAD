@@ -61,7 +61,7 @@ Note that the VLAD layer cannot work with random initialization.
 The original cluster centers provided by NetVLAD or self-computed cluster centers by running the scripts/cluster.sh.
 
 ```shell
-./scripts/cluster.sh mobilenetv3_large
+bash scripts/cluster.sh mobilenetv3_large
 ```
 
 ## Training
