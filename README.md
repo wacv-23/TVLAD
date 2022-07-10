@@ -2,7 +2,7 @@
 
 
 ## Introduction
-`TVLAD` is a PyTorch implementation for our WACV-2023 paper "TransVLAD: …… for Visual Geo-localization".
+`TVLAD` is a PyTorch implementation for our wacv-2023 paper "TransVLAD: …… for Visual Geo-localization".
 
 
 ## Installation
