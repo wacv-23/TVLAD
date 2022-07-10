@@ -38,12 +38,12 @@ def get_data(args, nIm):
 
 def get_model(args):
     base_model = models.create(args.arch)
-    pool_layer = models.create('netvlad', dim=base_model.feature_dim)
-    model = models.create('embedregionnet', base_model, pool_layer, tuple_size=1)
-
+    pool_layer = models.create('transvlad', dim=base_model.feature_dim)
+    model = models.create('embedregiontrans', base_model, pool_layer, tuple_size=1)
     model.cuda()
     model = nn.DataParallel(model)
     return model
+
 
 def main():
     args = parser.parse_args()
@@ -56,6 +56,7 @@ def main():
         cudnn.deterministic = True
 
     main_worker(args)
+
 
 def main_worker(args):
     cudnn.benchmark = True
@@ -119,6 +120,7 @@ def main_worker(args):
         print('====> Storing centroids', kmeans.cluster_centers_.shape)
         h5.create_dataset('centroids', data=kmeans.cluster_centers_)
         print('====> Done!')
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="VLAD centers initialization clustering")
