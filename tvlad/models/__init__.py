@@ -1,9 +1,12 @@
 from __future__ import absolute_import
-
+from .vgg import *
 from .mobilenetv3 import *
 from .transvlad import *
 
+
 __factory = {
+    'vgg16': vgg16,
+    'vgg19': vgg19,
     'mobilenetv3_large': mobilenetv3_large,
     'mobilenetv3_small': mobilenetv3_small,
     'transvlad': TransVLAD,

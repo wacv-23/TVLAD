@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import torchvision.transforms as T
 import numpy as np
 from torch.cuda.amp import autocast as autocast
-from .trans_crossattn import VisionTransformer, CONFIGS
+from .sparse_trans import VisionTransformer, CONFIGS
 
 
 class TransVLAD(nn.Module):
@@ -39,7 +39,7 @@ class TransVLAD(nn.Module):
         self.clsts = None
         self.traindescs = None
 
-        config = CONFIGS['testing']
+        config = CONFIGS['mobilenetv3']
         self.H = 30
         self.W = 40
         self.vit_layer = VisionTransformer(config, (self.H, self.W))
