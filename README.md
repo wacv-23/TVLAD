@@ -53,7 +53,7 @@ logs
 
 **(1) ImageNet-pretrained weights for CNNs backbone**
 
-The ImageNet-pretrained weights for CNNs backbone or the pretrained weights for the whole model.
+The ImageNet-pretrained weights for CNNs backbone or the pretrained weights for the model.
 
 **(2) initial cluster centers for VLAD layer**
 
