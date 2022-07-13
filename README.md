@@ -6,7 +6,7 @@
 
 
 ## Installation
-We test this repo with Python 3.8, PyTorch 1.9.0, and CUDA 10.2. But it should be runnable with recent PyTorch versions (Pytorch >=1.0.0).
+We test this repo with Python 3.8, PyTorch 1.9.0, and CUDA 10.2. However, it should be runnable with recent PyTorch versions (Pytorch >=1.1.0).
 ```shell
 python setup.py develop
 ```
