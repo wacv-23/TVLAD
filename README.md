@@ -99,5 +99,5 @@ For example:
 bash scripts/test_dist.sh logs/netVLAD/pitts30k-mobilenetv3_large/model_best.pth.tar mobilenetv3_large pitts 250k
 ```
 In the test.sh.
-In case you want to fasten testing, enlarge GPUS for more GPUs, or enlarge the --test-batch-size for larger batch size on one GPU.
-In case your GPU does not have enough memory, reduce --test-batch-size for smaller batch size on one GPU.
+In case you want to fasten testing, enlarge GPUS for more GPUs, or enlarge the --test-batch-size on one GPU.
+In case your GPU does not have enough memory, reduce --test-batch-size on one GPU.
