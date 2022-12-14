@@ -16,7 +16,7 @@ def extract_cnn_feature(model, inputs, vlad=True, gpu=None):
     if gpu == None:
         inputs = to_torch(inputs)
     else:
-        inputs = to_torch(inputs).cuda(gpu)
+        inputs = to_torch(inputs).cuda(gp)
     outputs = model(inputs)
     if (isinstance(outputs, list) or isinstance(outputs, tuple)):
         x_pool, x_vlad = outputs
