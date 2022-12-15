@@ -302,7 +302,7 @@ class VisionTransformer(nn.Module):
         x_downsampled = x_downsampled[:, 1:]
         N, _, C = x_downsampled.shape
         x_downsampled = x_downsampled.permute(0,2,1).view(N, C, self.img_size_sampled[0], -1)
-        x, _ = self.transformer(x)
+        x_downsampled, _ = self.transformer(x_downsampled)
         x_transposed = self.point_conv(self.transpose(x_downsampled))
         x += x_transposed
         return x
